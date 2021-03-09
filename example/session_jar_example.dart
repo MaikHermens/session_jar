@@ -1,12 +1,3 @@
-# Session Jar
-
-a simple lightweight package for creating and maintaining sessions in dart.
-
-## Usage
-
-A simple usage example:
-
-```dart
 import 'package:session_jar/session_jar.dart';
 
 void main() {
@@ -27,11 +18,3 @@ void main() {
   //do something with your session data
   print(sessionFromRequest?.body ?? 'session not found!');
 }
-
-```
-
-## Features and bugs
-
-Please file feature requests and bugs at the [issue tracker][tracker].
-
-[tracker]: https://github.com/MaikHermens/session_jar/issues
