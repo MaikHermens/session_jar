@@ -1,6 +1,6 @@
 # Session Jar
 
-a simple lightweight package for creating and maintaining sessions in dart.
+A simple lightweight package for creating and maintaining sessions in dart.
 
 ## Usage
 

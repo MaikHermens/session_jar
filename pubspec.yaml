@@ -1,5 +1,5 @@
 name: session_jar
-description: A lightweigt Session controller for a server
+description: A simple lightweight package for creating and maintaining sessions in dart.
 version: 0.0.1
 
 environment:
