@@ -1,7 +1,7 @@
 name: session_jar
 description: A simple lightweight package for creating and maintaining sessions in dart.
 version: 0.0.1
-
+repository: https://github.com/MaikHermens/session_jar
 environment:
   sdk: '>=2.12.0 <3.0.0'
 

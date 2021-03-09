@@ -1,3 +1,5 @@
-## 1.0.0
+## [0.0.1] - 2021-03-09 
 
-- Initial version, created by Stagehand
+- create sessions
+- convert sessions to cookies
+- get session data from a cookie
