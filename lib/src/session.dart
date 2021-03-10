@@ -5,7 +5,7 @@ import '../session_jar.dart';
 ///containes all the data of one session
 class Session<T> {
   final String token;
-  T body;
+  T? body;
   final SessionJar sessionJar;
 
   DateTime? _expiresOn;
@@ -26,7 +26,7 @@ class Session<T> {
 
   Session(
       {required this.token,
-      required this.body,
+      this.body,
       required this.sessionJar,
       Duration? expiresIn}) {
     //sets the expirationtime to the default value if needed

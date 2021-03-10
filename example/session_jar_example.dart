@@ -6,7 +6,7 @@ void main() {
 
 //add a session to your sessionjar
   var newSession =
-      sessionJar.create('username', expiresIn: Duration(hours: 12));
+      sessionJar.create(body: 'username', expiresIn: Duration(hours: 12));
 
 //send your session back to the client as a cookie
   var cookie = newSession.cookie;

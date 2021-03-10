@@ -20,7 +20,7 @@ class SessionJar<T> {
       this.defaultExpirationTime});
 
   ///Creates a new session and adds it to this jar.
-  Session create(T body, {Duration? expiresIn, String? token}) {
+  Session create({T? body, Duration? expiresIn, String? token}) {
     token ??= _findUnusedToken();
 
     var session = Session(
