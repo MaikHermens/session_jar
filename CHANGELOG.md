@@ -1,4 +1,10 @@
-## [0.0.1] - 2021-03-09 
+## [0.0.2] - 2021-03-10
+
+- session bodies can now be modified.
+
+- added support for a default exiration time.
+
+## [0.0.1] - 2021-03-09
 
 - create sessions
 - convert sessions to cookies

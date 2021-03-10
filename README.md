@@ -1,17 +1,15 @@
 # Session Jar
 
-A simple lightweight package for creating and maintaining sessions in dart.
+A simple server side package for creating and maintaining sessions in dart.
 
 ## Usage
-
-A simple usage example:
 
 ```dart
 import 'package:session_jar/session_jar.dart';
 
 void main() {
   //create a session jar
-  var sessionJar = SessionJar<String>();
+  var sessionJar = SessionJar();
 
 //add a session to your sessionjar
   var newSession =
@@ -29,6 +27,10 @@ void main() {
 }
 
 ```
+
+## To do:
+
+- [ ] Every session has its own expiration timer. this is not efficient in large projects. So I will improve the automatic session deletion in the future.
 
 ## Features and bugs
 

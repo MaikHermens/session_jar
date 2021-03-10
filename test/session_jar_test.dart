@@ -30,12 +30,40 @@ void main() {
   });
 
   test('Session gets removed from the jar after timeout', () async {
+    var duration = Duration(microseconds: 1);
     var jar = SessionJar();
-    var session =
-        jar.create('myusername', expiresIn: Duration(milliseconds: 100));
+    var session = jar.create('myusername', expiresIn: duration);
     expect(jar.exists(session.token), true);
 
-    await Future.delayed(Duration(milliseconds: 100));
+    await Future.delayed(duration);
     expect(jar.exists(session.token), false);
   });
+
+  test('exirationdate of cookie is correct with 1 second precision', () {
+    var duration = Duration(hours: 1);
+    var jar = SessionJar(defaultExpirationTime: duration);
+    var session = jar.create('myusername');
+    var cookie = session.cookie;
+    expect(roundToSeconds(cookie.expires),
+        roundToSeconds(DateTime.now().add(duration)));
+  });
+  test('default session expirationdate gets removed after timeout', () async {
+    var duration = Duration(microseconds: 1);
+
+    //add a default expirationtime
+    var jar = SessionJar(defaultExpirationTime: duration);
+    var session = jar.create('username');
+    //test if session is deleted after default expirationtime
+    expect(jar.exists(session.token), true);
+    await Future.delayed(duration);
+    expect(jar.exists(session.token), false);
+  });
+}
+
+//used to test if cookie expiringdate is correct
+int? roundToSeconds(DateTime? dateTime) {
+  if (dateTime == null) {
+    return null;
+  }
+  return (dateTime.millisecondsSinceEpoch / 1000).round();
 }
