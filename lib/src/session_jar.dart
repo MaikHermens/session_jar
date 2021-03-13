@@ -9,6 +9,7 @@ class SessionJar<T> {
   final String cookieName;
   final bool httpOnly;
   final Duration? defaultExpirationTime;
+  final String path;
   var _sessions = HashMap<String, Session<T>>();
 
   ///the amount of sessions currently in the sessionJar.
@@ -17,7 +18,8 @@ class SessionJar<T> {
       {this.tokenLength = 32,
       this.cookieName = 'sessionJarId',
       this.httpOnly = true,
-      this.defaultExpirationTime});
+      this.defaultExpirationTime,
+      this.path = '/'});
 
   ///Creates a new session and adds it to this jar.
   Session create({T? body, Duration? expiresIn, String? token}) {

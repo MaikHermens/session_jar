@@ -6,7 +6,7 @@ import '../session_jar.dart';
 class Session<T> {
   final String token;
   T? body;
-  final SessionJar sessionJar;
+  final SessionJar<T> sessionJar;
 
   DateTime? _expiresOn;
 
@@ -20,6 +20,7 @@ class Session<T> {
   Cookie get cookie {
     var cookie = Cookie(sessionJar.cookieName, token);
     cookie.expires = expiresOn;
+    cookie.path = sessionJar.path;
     cookie.httpOnly = sessionJar.httpOnly;
     return cookie;
   }
